@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us - Glowa</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+body{
+   
+    background: #c9e5b9;
+    font-family: 'Segoe UI', sans-serif;
+
+}
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+  }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #5B744B;
+    }
+
+    nav {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    nav a {
+    margin-left: 30px;
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+
+    nav a:hover, nav a.active {
+      color: #5B744B;
+    }
+
+    .cta-button {
+    padding: 8px 18px;
+    background-color: #5B744B;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 30px;
+    transition: background-color 0.3s ease;
+  }
+
+    .contact-section {
+        top: 30px;
+        left: 6%;
+        position: absolute;
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .contact-info {
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .contact-info h2 {
+      margin-bottom: 1rem;
+      color: #5B744B;
+    }
+
+    .contact-info p {
+      margin: 0.8rem 0;
+    }
+
+    .contact-info i {
+      color: #5B744B;
+      margin-right: 0.5rem;
+    }
+
+    .contact-form {
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .contact-form h2 {
+      margin-bottom: 1rem;
+      color: #5B744B;
+    }
+
+    .contact-form input, 
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin: 0.8rem 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    .contact-form button {
+      background-color: #5B744B;
+      color: white;
+      border: none;
+      padding: 0.7rem 1.5rem;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 1rem;
+    }
+
+    .map-container {
+       display: flex;
+       justify-content: center;
+      height: 300px;
+      border-radius: 15px;
+      overflow: hidden;
+      margin-top: 45%;
+    }
+
+    iframe {
+      width: 70%;
+      height: 90%;
+      border: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #5B744B;
+      color: white;
+    }
+
+    @media(max-width: 768px) {
+      .contact-section {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Glowa</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About Us</a>
+      <a href="testimonial.html">Testimonials</a>
+      <a href="contact.html" class="active">Contact</a>
+      <a href="shop.html" class="cta-button">Buy Now</a>
+    </nav>
+  </header>
+
+  <section class="contact-section">
+    <div class="contact-info">
+      <h2>Get In Touch</h2>
+      <p><i class="fas fa-phone-alt"></i> +91 98765 43210</p>
+      <p><i class="fas fa-envelope"></i> support@glowa.in</p>
+      <p><i class="fas fa-map-marker-alt"></i> No. 22, abc Street, Tamil Nadu, India</p>
+      <p><i class="fas fa-clock"></i> Mon - Fri: 9AM to 6PM</p>
+    </div>
+
+    <form class="contact-form" id="contactForm">
+      <h2>Send a Message</h2>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <div class="map-container">
+    <iframe 
+      src="https://maps.google.com/maps?q=tamilnadu&t=&z=13&ie=UTF8&iwloc=&output=embed"
+      allowfullscreen
+      loading="lazy">
+    </iframe>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Glowa. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thank you for contacting Glowa! We will get back to you soon.');
+      this.reset();
+    });
+  </script>
+
+</body>
+</html>

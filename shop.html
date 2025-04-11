@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Glowa - Shop</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+body{
+    height: 250vh;
+    background: #c9e5b9;
+    font-family: 'Segoe UI', sans-serif;
+
+}
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+  }
+  .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #5B744B;
+  }
+
+  
+  nav {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+  nav a {
+    margin-left: 30px;
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+
+  nav a:hover {
+    color: #5B744B;
+  }
+
+  .cta-button {
+    padding: 8px 18px;
+    background-color: #5B744B;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 30px;
+    transition: background-color 0.3s ease;
+  }
+
+  .cta-button:hover {
+    color: white;
+    background-color: #019874;
+  }
+
+    .shop-section {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap; 
+      align-items: center;
+      position:absolute;
+      top: 100px;
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 3rem;
+    } 
+
+    .product-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      padding: 1rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .product-title {
+      font-size: 1.1rem;
+      margin: 0.5rem 0;
+      font-weight: bold;
+    }
+
+    .price {
+      color: #e91e63;
+      font-size: 1.2rem;
+    }
+
+    .discount {
+      text-decoration: line-through;
+      color: #999;
+      font-size: 0.9rem;
+      margin-left: 8px;
+    }
+
+    .product-details {
+      font-size: 0.9rem;
+      color: #555;
+      margin: 0.5rem 0 1rem;
+    }
+
+    .product-actions button,
+    .product-actions i {
+      margin: 0.3rem;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .add-to-cart {
+      background: #2196f3;
+      color: #fff;
+    }
+
+    .buy-now {
+      background: #5B744B;
+      color: #fff;
+    }
+
+    .favorite {
+      background: none;
+      color: #b4b2b2;
+      font-size: 1.3rem;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+
+    .favorite.active {
+      color: rgb(248, 55, 80);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Glowa</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About Us</a>
+      <a href="testimonial.html">Testimonials</a>
+      <a href="contact.html">Contact</a>
+      <a href="shop.html" class="cta-button">Buy Now</a>
+    </nav>
+  </header>
+
+  <section class="shop-section">
+    <div class="product-card">
+      <img src="/assets/p1.webp" alt="Face Cream">
+      <i class="fas fa-heart favorite" onclick="toggleFavorite(this)"></i>
+      <div class="product-title">Hydrating Face Cream</div>
+      <div><span class="price">₹499</span><span class="discount">₹699</span></div>
+      <div class="product-details">Rich in aloe vera and hyaluronic acid. Keeps your skin hydrated all day long.</div>
+      <div class="product-actions">
+        <button class="add-to-cart">Add to Cart</button>
+        <button class="buy-now">Buy Now</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="/assets/p2.webp" alt="Serum">
+      <i class="fas fa-heart favorite" onclick="toggleFavorite(this)"></i>
+      <div class="product-title">Vitamin C Serum</div>
+      <div><span class="price">₹899</span><span class="discount">₹1199</span></div>
+      <div class="product-details">Brightens skin tone and reduces dark spots. Lightweight & fast absorbing.</div>
+      <div class="product-actions">
+        <button class="add-to-cart">Add to Cart</button>
+        <button class="buy-now">Buy Now</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="/assets/p3.webp" alt="Sunscreen">
+      <i class="fas fa-heart favorite" onclick="toggleFavorite(this)"></i>
+      <div class="product-title">SPF 50+ Sunscreen</div>
+      <div><span class="price">₹599</span><span class="discount">₹799</span></div>
+      <div class="product-details">Non-greasy formula. Protects against UVA & UVB rays. Suitable for all skin types.</div>
+      <div class="product-actions">
+        <button class="add-to-cart">Add to Cart</button>
+        <button class="buy-now">Buy Now</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+        <img src="/assets/p4.webp" alt="Hydrating Toner">
+        <i class="fas fa-heart favorite" onclick="toggleFavorite(this)"></i>
+        <div class="product-title">Hydrating Toner</div>
+        <div><span class="price">₹399</span><span class="discount">₹599</span></div>
+        <div class="product-details">Soothes and refreshes the skin while balancing pH levels.</div>
+        <div class="product-actions">
+          <button class="add-to-cart">Add to Cart</button>
+          <button class="buy-now">Buy Now</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="/assets/p5.webp" alt="Night Cream">
+        <i class="fas fa-heart favorite" onclick="toggleFavorite(this)"></i>
+        <div class="product-title">Night Repair Cream</div>
+        <div><span class="price">₹699</span><span class="discount">₹899</span></div>
+        <div class="product-details">Deep nourishment for glowing skin while you sleep.</div>
+        <div class="product-actions">
+          <button class="add-to-cart">Add to Cart</button>
+          <button class="buy-now">Buy Now</button>
+        </div>
+      </div>
+
+
+      <div class="product-card">
+        <img src="/assets/p6.jpg" alt="Glow face serum">
+        <i class="fas fa-heart favorite" onclick="toggleFavorite(this)"></i>
+        <div class="product-title">Glow Face Serum</div>
+        <div><span class="price">₹499</span><span class="discount">₹699</span></div>
+        <div class="product-details">Brightens skin and reduces dark spots.</div>
+        <div class="product-actions">
+          <button class="add-to-cart">Add to Cart</button>
+          <button class="buy-now">Buy Now</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="/assets/p7.jpg" alt="Green Tea Cleanser">
+        <i class="fas fa-heart favorite" onclick="toggleFavorite(this)"></i>
+        <div class="product-title">Green Tea Cleanser</div>
+        <div><span class="price">₹399</span><span class="discount">₹599</span></div>
+        <div class="product-details">Gently removes dirt and refreshes the skin.</div>
+        <div class="product-actions">
+          <button class="add-to-cart">Add to Cart</button>
+          <button class="buy-now">Buy Now</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="/assets/p8.avif" alt="Charcoal Mask">
+        <i class="fas fa-heart favorite" onclick="toggleFavorite(this)"></i>
+        <div class="product-title">Activated Charcoal Mask</div>
+        <div><span class="price">₹299</span><span class="discount">₹449</span></div>
+        <div class="product-details">Detoxifies skin, removes blackheads and deep cleans pores.</div>
+        <div class="product-actions">
+          <button class="add-to-cart">Add to Cart</button>
+          <button class="buy-now">Buy Now</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="/assets/p9.avif" alt="Moisturizer">
+        <i class="fas fa-heart favorite" onclick="toggleFavorite(this)"></i>
+        <div class="product-title">Aloe Vera Moisturizer</div>
+        <div><span class="price">₹499</span><span class="discount">₹649</span></div>
+        <div class="product-details">Lightweight, non-sticky moisturizer. Keeps skin hydrated all day.</div>
+        <div class="product-actions">
+          <button class="add-to-cart">Add to Cart</button>
+          <button class="buy-now">Buy Now</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="/assets/p10.jpg" alt="Body Lotion">
+        <i class="fas fa-heart favorite" onclick="toggleFavorite(this)"></i>
+        <div class="product-title">Cocoa Butter Body Lotion</div>
+        <div><span class="price">₹349</span><span class="discount">₹499</span></div>
+        <div class="product-details">Deep nourishment and long-lasting hydration for dry skin.</div>
+        <div class="product-actions">
+          <button class="add-to-cart">Add to Cart</button>
+          <button class="buy-now">Buy Now</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="/assets/p11.jpg" alt="Lip Balm">
+        <i class="fas fa-heart favorite" onclick="toggleFavorite(this)"></i>
+        <div class="product-title">Shea Butter Lip Balm</div>
+        <div><span class="price">₹149</span><span class="discount">₹199</span></div>
+        <div class="product-details">Heals cracked lips and keeps them soft. Subtle tint included.</div>
+        <div class="product-actions">
+          <button class="add-to-cart">Add to Cart</button>
+          <button class="buy-now">Buy Now</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="/assets/p12.webp" alt="Under Eye Cream">
+        <i class="fas fa-heart favorite" onclick="toggleFavorite(this)"></i>
+        <div class="product-title">Under Eye Brightening Cream</div>
+        <div><span class="price">₹399</span><span class="discount">₹549</span></div>
+        <div class="product-details">Reduces dark circles and puffiness. Enriched with cucumber extract.</div>
+        <div class="product-actions">
+          <button class="add-to-cart">Add to Cart</button>
+          <button class="buy-now">Buy Now</button>
+        </div>
+      </div>
+
+  </section>
+
+  <script>
+
+
+
+
+  function toggleFavorite(icon) {
+    icon.classList.toggle("active");
+  }
+
+  document.querySelectorAll(".add-to-cart").forEach((button) => {
+    button.addEventListener("click", function () {
+      const card = this.closest(".product-card");
+      const name = card.querySelector(".product-title").textContent;
+      alert(`${name} added to cart!`);
+    });
+  });
+
+  document.querySelectorAll(".buy-now").forEach((button) => {
+    button.addEventListener("click", function () {
+      const card = this.closest(".product-card");
+      const name = card.querySelector(".product-title").textContent;
+      alert(`${name} product Successfully Purchased!`);
+      
+    });
+  });
+
+  
+  </script>
+</body>
+</html>

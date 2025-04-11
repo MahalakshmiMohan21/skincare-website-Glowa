@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us - Glowa</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+body{
+    
+    background: #c9e5b9;
+    font-family: 'Segoe UI', sans-serif;
+
+}
+
+    header {
+      position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #5B744B;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      margin-left: 30px;
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    transition: color 0.3s ease;
+    }
+
+    nav a:hover, nav a.active {
+      color: #6c9255;
+    }
+
+    .cta-button {
+      padding: 8px 18px;
+    background-color: #5B744B;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 30px;
+    transition: background-color 0.3s ease;
+    
+    }
+
+    .cta-button:hover {
+      color: white;
+      background-color: #6c9255;
+    }
+
+    .about-container {
+      position: absolute;
+      top: 100px;
+      left: 14%;
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .about-container h1, .about-container h2 {
+      color: #5B744B;
+      margin-bottom: 1rem;
+    }
+
+    .about-container p {
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-container ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 2rem 0;
+    }
+
+    .about-container ul li {
+      margin: 12px 0;
+      font-size: 1.1rem;
+    }
+
+    .about-container ul li i {
+      margin-right: 10px;
+      color: #28a745;
+    }
+
+    .about-cta .cta-button {
+      text-decoration: none;
+      margin-top: 1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #5B744B;
+      color: white;
+      margin-top: 1000px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Glowa</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html" class="active">About Us</a>
+      <a href="testimonial.html">Testimonials</a>
+      <a href="contact.html">Contact</a>
+      <a href="shop.html" class="cta-button">Buy Now</a>
+    </nav>
+  </header>
+
+  <main class="about-container">
+    <section class="about-intro">
+      <h1>About Glowa</h1>
+      <p>Glowa is more than a skincare brand — we’re a movement toward radiant, healthy, and confident skin for all. Rooted in nature and backed by science, our mission is to bring you clean, effective, and affordable skincare solutions that truly work.</p>
+    </section>
+
+    <section class="about-values">
+      <h2>Our Philosophy</h2>
+      <p>We believe in <strong>honest ingredients</strong>, <strong>real results</strong>, and <strong>gentle care</strong>. Every Glowa product is carefully formulated using time-tested botanicals, modern actives, and cruelty-free practices.</p>
+    </section>
+
+    <section class="about-promise">
+      <h2>What Makes Glowa Different?</h2>
+      <ul>
+        <li><i class="fas fa-leaf"></i> 100% Vegan and Cruelty-Free</li>
+        <li><i class="fas fa-flask"></i> Dermatologically Tested</li>
+        <li><i class="fas fa-recycle"></i> Eco-Friendly Packaging</li>
+        <li><i class="fas fa-heart"></i> Loved by Over 1 Million Customers</li>
+      </ul>
+    </section>
+
+    <section class="about-journey">
+      <h2>Our Journey</h2>
+      <p>Founded in 2021, Glowa started as a passion project by skincare enthusiasts and dermatologists who wanted to make safe skincare accessible to everyone. Today, Glowa stands tall with a growing community and global presence.</p>
+    </section>
+
+    <section class="about-cta">
+      <h2>Join the Glowa Tribe</h2>
+      <p>Thousands trust Glowa to elevate their skincare routine. Discover your glow with us today.</p>
+      <a href="shop.html" class="cta-button">Explore Products</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Glowa. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

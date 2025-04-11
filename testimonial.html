@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Testimonials - Glowa</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+body{
+    
+    background: #c9e5b9;
+    font-family: 'Segoe UI', sans-serif;
+
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+  }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #5B744B;
+    }
+
+    nav {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    nav a {
+    margin-left: 30px;
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+
+
+    nav a:hover, nav a.active {
+      color: #5B744B;
+    }
+
+    .cta-button {
+    padding: 8px 18px;
+    background-color: #5B744B;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 30px;
+    transition: background-color 0.3s ease;
+  }
+
+    main {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    h1 {
+      color: #5B744B;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .testimonial-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .testimonial-card {
+      background-color: white;
+      border-radius: 15px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      position: relative;
+      transition: transform 0.3s ease;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .testimonial-card img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+
+    .testimonial-card h3 {
+      margin: 0.5rem 0 0.2rem;
+      color: #222;
+    }
+
+    .testimonial-card span {
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    .testimonial-card p {
+      margin-top: 1rem;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .stars {
+      color: gold;
+      margin-top: 0.5rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #5B744B;
+      color: white;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Glowa</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About Us</a>
+      <a href="testimonial.html" class="active">Testimonials</a>
+      <a href="contact.html">Contact</a>
+      <a href="shop.html" class="cta-button">Buy Now</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>What Our Customers Say</h1>
+    <div class="testimonial-container" id="testimonial-container">
+      
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Glowa. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const testimonials = [
+      {
+        name: "Anjali",
+        role: "Makeup Artist, Mumbai",
+        image: "https://randomuser.me/api/portraits/women/44.jpg",
+        rating: 5,
+        message: "Glowa's Vitamin C Serum has changed my skin! My complexion is brighter, and my dark spots are fading fast. Highly recommend!"
+      },
+      {
+        name: "Ritika ",
+        role: "Student, Delhi",
+        image: "https://randomuser.me/api/portraits/women/22.jpg",
+        rating: 4,
+        message: "I have sensitive skin, and Glowa's face wash is the only one that doesn't irritate me. Love the fragrance too!"
+      },
+      {
+        name: "Sneha ",
+        role: "Blogger, Bangalore",
+        image: "https://randomuser.me/api/portraits/women/55.jpg",
+        rating: 5,
+        message: "Their packaging is beautiful and eco-friendly. I love how light the moisturizer feels on my skin!"
+      },
+      {
+        name: "Pooja ",
+        role: "Engineer, Pune",
+        image: "https://randomuser.me/api/portraits/women/68.jpg",
+        rating: 4,
+        message: "I used Glowa’s sunscreen for a beach trip, and it protected my skin so well. No breakouts, no sunburn!"
+      },
+      {
+        name: "Swetha",
+        role: "Fitness Coach, Hyderabad",
+        image: "https://randomuser.me/api/portraits/women/77.jpg",
+        rating: 5,
+        message: "I’m hooked on their night cream. Every morning my skin feels refreshed and glowing!"
+      }
+    ];
+
+    function renderTestimonials() {
+      const container = document.getElementById("testimonial-container");
+      testimonials.forEach(t => {
+        const card = document.createElement("div");
+        card.className = "testimonial-card";
+        card.innerHTML = `
+          <img src="${t.image}" alt="${t.name}" />
+          <h3>${t.name}</h3>
+          <span>${t.role}</span>
+          <div class="stars">${"★".repeat(t.rating)}${"☆".repeat(5 - t.rating)}</div>
+          <p>"${t.message}"</p>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    renderTestimonials();
+  </script>
+
+</body>
+</html>
